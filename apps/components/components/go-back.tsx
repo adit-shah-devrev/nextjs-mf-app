@@ -2,7 +2,11 @@ import { NextRouter } from 'next/router';
 import React from 'react';
 import styles from '../pages/index.module.scss';
 
-export const GoBack = ({ router }: { router: NextRouter }) => {
+export interface GoBackProps {
+  router: NextRouter;
+}
+
+export const GoBack = ({ router }: GoBackProps) => {
   const handleGoBack = () => {
     router.back();
   };

@@ -3,6 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
 
 const federationConfig = {
   exposes: {
@@ -28,6 +29,12 @@ const nextConfig = {
       new NextFederationPlugin({
         ...federationConfig,
         remotes: {},
+      })
+    );
+
+    config.plugins.push(
+      new FederatedTypesPlugin({
+        federationConfig,
       })
     );
 
