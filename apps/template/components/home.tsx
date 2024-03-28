@@ -11,7 +11,11 @@ const LoginComponentRemote = dynamic(() =>
   import('components/login').then((mod) => mod.Login)
 ) as typeof LoginRemote;
 
-export const Home = ({ router }: { router: NextRouter }) => {
+export interface HomeProps {
+  router: NextRouter;
+}
+
+export const Home = ({ router }: HomeProps) => {
   return (
     <div className={styles.home}>
       <div>This is Home Component - Rendered from Template App</div>

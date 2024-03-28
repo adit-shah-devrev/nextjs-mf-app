@@ -1,8 +1,6 @@
 /// <reference types="react" />
 export interface CounterDisplayProps {
-  counter: number;
+    counter: number;
 }
-export declare const CounterDisplay: ({
-  counter,
-}: CounterDisplayProps) => JSX.Element;
+export declare const CounterDisplay: ({ counter }: CounterDisplayProps) => JSX.Element;
 export default CounterDisplay;

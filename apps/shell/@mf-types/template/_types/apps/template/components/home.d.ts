@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { NextRouter } from 'next/router';
-export declare const Home: ({ router }: {
+export interface HomeProps {
     router: NextRouter;
-}) => JSX.Element;
+}
+export declare const Home: ({ router }: HomeProps) => JSX.Element;
 export default Home;
