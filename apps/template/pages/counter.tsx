@@ -38,7 +38,6 @@ export function Counter() {
 
   return (
     <div className={styles.page}>
-      <div>This is Counter Page - Rendered from Shell App</div>
       <CounterDisplay counter={counter} />
       <GoBackComponent router={router} />
     </div>
