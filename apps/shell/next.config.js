@@ -3,6 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
 
 const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
@@ -11,6 +12,11 @@ const remotes = (isServer) => {
     template: `template@${process.env.NEXT_PUBLIC_TEMPLATE_URL}/_next/static/${location}/remoteEntry.js`,
     components: `components@${process.env.NEXT_PUBLIC_COMPONENTS_URL}/_next/static/${location}/remoteEntry.js`,
   };
+};
+
+const typeRemotes = {
+  template: `template@${process.env.NEXT_PUBLIC_TEMPLATE_URL}/_next/static/chunks//remoteEntry.js`,
+  components: `components@${process.env.NEXT_PUBLIC_COMPONENTS_URL}/_next/static/chunks//remoteEntry.js`,
 };
 
 const federationConfig = {
@@ -33,6 +39,15 @@ const nextConfig = {
       new NextFederationPlugin({
         ...federationConfig,
         remotes: remotes(options.isServer),
+      })
+    );
+
+    config.plugins.push(
+      new FederatedTypesPlugin({
+        federationConfig: {
+          ...federationConfig,
+          remotes: typeRemotes,
+        },
       })
     );
 

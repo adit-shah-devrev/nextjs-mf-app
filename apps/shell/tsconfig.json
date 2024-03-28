@@ -11,15 +11,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@mf-types/*": ["apps/shell/@mf-types/*"]
+    }
   },
   "include": [
     "**/*.ts",
