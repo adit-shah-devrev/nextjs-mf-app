@@ -4,19 +4,14 @@
 const { withNx } = require('@nrwl/next/plugins/with-nx');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 
-const remotes = (isServer) => {
-  const location = isServer ? 'ssr' : 'chunks';
-
-  return {
-    template: `template@${process.env.NEXT_PUBLIC_TEMPLATE_URL}/_next/static/${location}/remoteEntry.js`,
-    components: `components@${process.env.NEXT_PUBLIC_COMPONENTS_URL}/_next/static/${location}/remoteEntry.js`,
-  };
-};
-
 const federationConfig = {
+  exposes: {
+    './login': './components/login',
+    './go-back': './components/go-back',
+  },
   extraOptions: {},
   filename: 'static/chunks/remoteEntry.js',
-  name: 'shell',
+  name: 'components',
 };
 
 /**
@@ -32,7 +27,7 @@ const nextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         ...federationConfig,
-        remotes: remotes(options.isServer),
+        remotes: {},
       })
     );
 

@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nextjs-mf-app/mf-revalidate": ["libs/mf-revalidate/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

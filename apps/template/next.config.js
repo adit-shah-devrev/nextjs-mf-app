@@ -8,15 +8,18 @@ const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
 
   return {
-    template: `template@${process.env.NEXT_PUBLIC_TEMPLATE_URL}/_next/static/${location}/remoteEntry.js`,
     components: `components@${process.env.NEXT_PUBLIC_COMPONENTS_URL}/_next/static/${location}/remoteEntry.js`,
   };
 };
 
 const federationConfig = {
+  exposes: {
+    './home': './components/home',
+    './counter-display': './components/counter-display',
+  },
   extraOptions: {},
   filename: 'static/chunks/remoteEntry.js',
-  name: 'shell',
+  name: 'template',
 };
 
 /**
