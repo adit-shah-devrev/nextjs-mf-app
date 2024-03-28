@@ -44,6 +44,7 @@ export function Counter() {
   return (
     <div className={styles.page}>
       <div>This is Counter Page - Rendered from Shell App</div>
+      <div>Counter interval is in Shell App</div>
       <CounterDisplayComponent counter={counter} />
       <GoBackComponent router={router} />
     </div>
