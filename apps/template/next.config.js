@@ -21,6 +21,7 @@ const federationConfig = {
   exposes: {
     './home': './components/home',
     './counter-display': './components/counter-display',
+    './components-map': './components/components-map',
   },
   extraOptions: {},
   filename: 'static/chunks/remoteEntry.js',

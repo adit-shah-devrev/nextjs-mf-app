@@ -28,7 +28,7 @@
     "**/*.jsx",
     "next-env.d.ts",
     "../../apps/shell/.next/types/**/*.ts"
-  ],
+, "parse-page-layout.tsx"  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",
