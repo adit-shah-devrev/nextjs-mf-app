@@ -22,6 +22,7 @@ export type Styles = {
   display: Partial<{
     height: string;
     width: string;
+    padding: string;
   }>;
 };
 
@@ -30,6 +31,7 @@ export type Component = {
   name: string;
   props: Record<string, unknown>;
   styles: Styles;
+  children?: (Component | Section)[];
 };
 
 export type Section = {

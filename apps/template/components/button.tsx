@@ -1,21 +1,24 @@
 import React from 'react';
 
-export const Text = ({
-  text,
+export const Button = ({
   borderWidth,
   borderColor,
   borderStyle,
-  childrenProps,
+  children,
+  text,
+  styles,
 }) => {
   return (
-    <div
+    <button
       style={{
         borderWidth,
         borderColor,
         borderStyle,
+        ...styles,
       }}
     >
       {text}
-    </div>
+      {children({ text: 'Hello There' })}
+    </button>
   );
 };

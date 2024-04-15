@@ -29,11 +29,12 @@ const PAGE_LAYOUT: Section = {
       type: 'flex',
       direction: 'column',
       justifyContent: 'flex-start',
-      alignItems: 'center',
+      alignItems: 'flex-start',
     },
     display: {
       height: '100%',
       width: '100%',
+      padding: '50px',
     },
   },
   type: 'section',
@@ -42,7 +43,7 @@ const PAGE_LAYOUT: Section = {
       type: 'component',
       name: 'text',
       props: {
-        text: 'Hello World!',
+        text: 'Lord Ayush',
         borderWidth: '1px',
         borderColor: 'red',
         borderStyle: 'solid',
@@ -52,6 +53,130 @@ const PAGE_LAYOUT: Section = {
         display: {},
       },
     },
+    {
+      type: 'component',
+      name: 'button',
+      props: {
+        borderWidth: '1px',
+        borderColor: 'blue',
+        borderStyle: 'solid',
+        text: 'Button text from top section',
+      },
+      styles: {
+        layout: {
+          type: 'flex',
+          direction: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+        display: {},
+      },
+      children: [
+        {
+          type: 'component',
+          name: 'text',
+          props: {
+            text: 'Children 2 from button component',
+            borderWidth: '1px',
+            borderColor: 'green',
+            borderStyle: 'solid',
+          },
+          styles: {
+            layout: {},
+            display: {},
+          },
+        },
+        {
+          type: 'section',
+          styles: {
+            layout: {
+              type: 'flex',
+              direction: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            },
+            display: {},
+          },
+          children: [
+            {
+              type: 'component',
+              name: 'text',
+              props: {
+                text: 'Children 3 from section inside button component',
+                borderWidth: '1px',
+                borderColor: 'yellow',
+                borderStyle: 'solid',
+              },
+              styles: {
+                layout: {},
+                display: {},
+              },
+            },
+            {
+              type: 'component',
+              name: 'text',
+              props: {
+                text: 'Children 4 from section inside button component',
+                borderWidth: '1px',
+                borderColor: 'black',
+                borderStyle: 'solid',
+              },
+              styles: {
+                layout: {},
+                display: {},
+              },
+            },
+          ],
+        },
+      ],
+    },
+    // {
+    //   type: 'component',
+    //   name: 'directories',
+    //   props: {},
+    //   styles: {
+    //     layout: {
+    //       type: 'flex',
+    //       direction: 'row',
+    //       justifyContent: 'flex-start',
+    //       alignItems: 'flex-start',
+    //     },
+    //     display: {
+    //       padding: '20px',
+    //     },
+    //   },
+    //   children: [
+    //     {
+    //       type: 'component',
+    //       name: 'directory',
+    //       props: {
+    //         borderWidth: '1px',
+    //         borderColor: 'red',
+    //         borderStyle: 'solid',
+    //       },
+    //       styles: {
+    //         layout: {},
+    //         display: {},
+    //       },
+    //       children: [
+    //         {
+    //           type: 'component',
+    //           name: 'text',
+    //           props: {
+    //             text: 'Directory 1',
+    //             borderWidth: '1px',
+    //             borderColor: 'green',
+    //             borderStyle: 'solid',
+    //           },
+    //           styles: {
+    //             layout: {},
+    //             display: {},
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 };
 
